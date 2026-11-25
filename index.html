@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-sky="night" class="loading">
+  <canvas id="fx" aria-hidden="true"></canvas>
+  <div class="flash" aria-hidden="true"></div>
+  <div class="orb o1"></div><div class="orb o2"></div>
+
+  <div class="app">
+    <header class="bar rise" style="--i:0">
+      <div class="brand">
+        <svg viewBox="0 0 64 64" width="30" height="30" aria-hidden="true"><circle cx="26" cy="26" r="12" fill="#ffc233"/><path d="M20 50a10 10 0 0 1-1-20 14 14 0 0 1 27-3 11 11 0 0 1 2 23z" fill="#e8f0fa"/></svg>
+        <span data-t="brand">Weather</span>
+      </div>
+      <div class="search">
+        <input id="q" type="search" data-ph="search" data-al="search" placeholder="Search for a city" autocomplete="off" aria-label="Search for a city">
+        <ul id="results" hidden></ul>
+      </div>
+      <button id="locate" class="btn" data-al="locate" aria-label="Use my location" title="Use my location">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+      </button>
+      <button id="unit" class="btn" data-al="units" aria-label="Switch units" title="Switch units">°C</button>
+      <button id="lang" class="btn" data-al="langsw" aria-label="Switch language" title="Switch language">عربي</button>
+    </header>
+
+    <div id="recent" class="chips rise" style="--i:1"></div>
+    <p id="err" class="err" role="alert" hidden></p>
+
+    <main>
+      <section class="card hero rise" style="--i:2">
+        <div class="hero-text">
+          <h1 id="location">Loading…</h1>
+          <p class="sub" id="sub"></p>
+          <p class="time" id="time"></p>
+          <div class="temp" dir="ltr"><span id="temperature">--</span><sup id="deg">°C</sup></div>
+          <p class="desc" id="description"></p>
+          <p class="hilo" id="hilo"></p>
+        </div>
+        <div class="weather-icon" id="weather-icon" role="img" aria-label="Current conditions"></div>
+      </section>
+
+      <section class="card rise" style="--i:3">
+        <h2 data-t="h24">Next 24 hours</h2>
+        <div class="hourly" id="hourly"></div>
+      </section>
+
+      <section class="grid">
+        <div class="card tile rise" style="--i:4"><span class="lbl" data-t="feels">Feels like</span><b id="feels">--</b></div>
+        <div class="card tile rise" style="--i:5"><span class="lbl" data-t="wind">Wind</span><b><i id="arrow" class="arrow">↑</i> <span id="wind-speed">--</span></b></div>
+        <div class="card tile rise" style="--i:6"><span class="lbl" data-t="hum">Humidity</span><b id="humidity">--</b><div class="meter"><i id="humbar"></i></div></div>
+        <div class="card tile rise" style="--i:7"><span class="lbl" data-t="press">Pressure</span><b id="pressure">--</b></div>
+        <div class="card tile rise" style="--i:8"><span class="lbl" data-t="uv">UV index</span><b id="uv">--</b><small id="uvl"></small></div>
+        <div class="card tile rise" style="--i:9"><span class="lbl" data-t="rain">Chance of rain</span><b id="rain">--</b><div class="meter"><i id="rainbar"></i></div></div>
+        <div class="card tile rise" style="--i:10"><span class="lbl" data-t="sunrise">Sunrise</span><b id="sunrise">--</b></div>
+        <div class="card tile rise" style="--i:11"><span class="lbl" data-t="sunset">Sunset</span><b id="sunset">--</b></div>
+      </section>
+
+      <section class="card rise" style="--i:12">
+        <h2 data-t="d7">7-day forecast</h2>
+        <div class="daily" id="forecast-container"></div>
+      </section>
+    </main>
+
+    <footer class="footer rise" style="--i:13">
+      <p data-t="copy">Weather App © 2025 Zeyad Gaber | All Rights Reserved</p>
+      <p class="attribution"><span data-t="credit">Weather data by</span> <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)</p>
+    </footer>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
