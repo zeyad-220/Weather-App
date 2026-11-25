@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="responsive.css">
+  <link rel="stylesheet" href="style.css">
+  <title> Weather App</title>
+  
+</head>
+<body>
+  <div class="container">
+    <h1 class="title">Weather App</h1>
+    <div class="current-weather">
+      <div class="weather-icon" id="weather-icon"></div>
+      <div class="location" id="location">Loading...</div>
+      <div class="temperature" id="temperature">Loading...</div>
+      <div class="description" id="description">Loading...</div>
+    </div>
+    <div class="details">
+      <div class="detail-item">
+        <div class="detail-label">Wind Speed</div>
+        <div class="detail-value" id="wind-speed">Loading...</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Humidity</div>
+        <div class="detail-value" id="humidity">Loading...</div>
+      </div>
+      <div class="detail-item">
+        <div class="detail-label">Pressure</div>
+        <div class="detail-value" id="pressure">Loading...</div>
+      </div>
+    </div>
+    <div class="forecast-container" id="forecast-container">
+      <!-- Forecast items -->
+    </div>
+  </div>
+  <footer class="footer">
+    <p> Weather App © 2025 Zeyad Gaber | All Rights Reserved </p>
+    <p class="attribution">Weather data by <a href="https://open-meteo.com/" target="_blank" rel="noopener">Open-Meteo.com</a> (CC BY 4.0)</p>
+  </footer>
+  
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+/* Small Mobile Devices (Portrait) */
+@media screen and (max-width: 320px) {
+    /* Add your styles here */
+    body {
+        font-size: 12px;
+    }
+}
+
+/* Mobile Devices (Portrait) */
+@media screen and (min-width: 321px) and (max-width: 480px) {
+    /* Add your styles here */
+    body {
+        font-size: 14px;
+    }
+}
+
+/* Mobile Devices (Landscape) */
+@media screen and (min-width: 481px) and (max-width: 768px) {
+    /* Add your styles here */
+    body {
+        font-size: 16px;
+    }
+}
+
+/* Tablets (Portrait) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    /* Add your styles here */
+    body {
+        font-size: 18px;
+    }
+}
+
+/* Tablets (Landscape) */
+@media screen and (min-width: 1025px) and (max-width: 2560px) {
+    /* Add your styles here */
+    body {
+        font-size: 20px;
+    }
+}
